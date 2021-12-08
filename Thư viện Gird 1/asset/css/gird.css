@@ -1,0 +1,92 @@
+/* 1.đầu tiên đặt tên nó là gird thôi */
+
+
+/* 2 cho width=100% chiếm hết chiều ngang màn hình
+   3 hoặc là cho display: block; thay cho width=100%
+   nhưng mà thêm display:block vô đề phòng trường hợp kh cần thiết 
+*/
+
+
+/* 4. đưa cái padding=0 tráng ảnh hưởng cái gird về sau này
+  5. đặt thêm 1 thư viện nữa gird.wide tức là thằng này chỉ dùng cho thằng gird
+  6. style lại man hinh table - pc( độ phân giải thấp)
+  7. khi xuống mobile nó chiếm hết 100% class gird
+  8.tạo class ROW.(hàng\dòng)
+  9.
+
+*/
+
+.gird {
+    /* 2 or 3 */
+    width: 100%;
+    display: block;
+    /* 4 */
+    padding: 0;
+}
+
+
+/* 5 
+   cho nó cái chiều ngang 1200px
+   layout căn giữa
+*/
+
+.gird.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 8. dòng thì nó nằm ngang display:flex
+    khi các column vượt quá thì cho nó xuống hàng flex-wrap: wrap;
+    khoảng trống 2 bên gutter.
+*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    /* nobile */
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+
+/* 6 tablet */
+
+@media only screen and (min-width:740px) and (max-width:1023px) {
+    .wide {
+        width: 644px;
+    }
+}
+
+
+/* > tablet */
+
+@media only screen and (min-width:740px) {
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+}
+
+
+/* pc độ phân giải thấp trở lên */
+
+@media only screen and (min-width:1113px) {
+    .row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+}
+
+
+/*pc độ phân giải thấp trở lên */
+
+@media only screen and (min-width:1024px) and (max-width:1239px) {
+    .wide {
+        width: 984px;
+    }
+    .wide.row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+}
