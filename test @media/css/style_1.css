@@ -1,0 +1,62 @@
+/* đầu tiên chỉ sử dụng thẻ css1 */
+
+
+/* only + media type + từ and+ (media feature) */
+
+
+/* nhỏ hơn hoặc bằng 1024 thì nó offline cho cái này */
+
+body {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    background-color: red;
+    width: 33.3333%;
+}
+
+h2 {
+    background-color: aqua;
+    width: 33.3333%;
+}
+
+h3 {
+    background-color: aliceblue;
+    width: 33.3333%;
+}
+
+h1,
+h2,
+h3 {
+    display: none;
+    background-color: gold;
+    width: 100%;
+}
+
+
+/* mobile width: <=740 */
+
+@media only screen and (max-width: 46.188em) {
+    h1 {
+        display: block;
+    }
+}
+
+
+/* table width: >=740 and <= 1240 */
+
+@media only screen and (min-width: 46.250em) and (max-width: 63.938em) {
+    h2 {
+        display: block;
+    }
+}
+
+
+/* pc width: >= 1240*/
+
+@media only screen and (min-width: 64.000em) {
+    h3 {
+        display: block;
+    }
+}

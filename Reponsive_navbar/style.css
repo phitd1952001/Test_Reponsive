@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+.main {
+    width: 1366px;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    background-color: rgb(24, 7, 7);
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 48px;
+}
+
+
+/* Article */
+
+h1 {
+    line-height: 2rem;
+}
+
+article {
+    padding: 0 16px;
+    line-height: 1.6rem;
+}
+
+article img {
+    width: 640px;
+    max-width: 100%;
+    display: block;
+    margin: 32px auto;
+}
+
+
+/* mobile nav */
+
+.nav_bars_btn {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    /* pc */
+    display: none;
+    margin-left: 10px;
+}
+
+
+/* checked box */
+
+
+/* 1 */
+
+.nav_input:checked~.nav_overlay {
+    display: block;
+}
+
+.nav_input:checked~.nav_mobile {
+    transform: translateX(0%);
+    /* .nav_mobile opasity */
+    opacity: 1;
+    /* 2 */
+    /* or hidden */
+    /* .nav_input {
+display: none;*/
+}
+
+
+/* checked box */
+
+.nav_overlay {
+    /* phu kin man hinh */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* lan dau tien truy cap vao no kh hien thi */
+    display: none;
+    /* @keyframes hiệu ứng*/
+    animation: fadein linear 0.2s;
+}
+
+
+/* khi xuong mobi no se bam sat le
+trai man hinh, tren va duoi man hinh*/
+
+.nav_mobile {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    /* để nó trượt ra đc */
+    transform: translateX(-100%);
+    /* trượt vào */
+    opacity: 0;
+    /* transform hỗ trọ cho transition hiệu ứng trượt ra */
+    transition: transform linear 0.2s, opacity linear 0.2s;
+    /* or */
+    /* transition: all linear 0.2s; */
+}
+
+.nav_mobile_close {
+    width: 28px;
+    height: 28px;
+    color: #000;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.nav__list {
+    flex-direction: column;
+}
+
+.nav__list,
+li {
+    margin: 3rem 0 0 .5rem;
+}
+
+.nav_mobile_link {
+    text-decoration: none;
+    color: black;
+    /* dr co the xet dc padding */
+    display: block;
+    padding: 8px 0;
+    font-size: 1.4em;
+}
+
+@media only screen and (max-width: 1023px) {
+    .nav_bars_btn {
+        /* mobile hien lwn*/
+        display: block;
+    }
+    .nav__pc {
+        display: none;
+    }
+}
+
+
+/* để trượt từ ngoài vào và cho lớp overlay mờ đi
+đặt cho nó cái tên fadein */
+
+@keyframes fadein {
+    /* điểm bắt đầu */
+    from {
+        opacity: 0;
+    }
+    /* end */
+    to {
+        opacity: 1;
+    }
+    /* đưa vào ông overlay */
+}
